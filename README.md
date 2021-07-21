@@ -7,4 +7,4 @@ Boilerplate code for SWE Bootcamp Project
 3. npm install
 4. Find your bliss!
 
-Linda's Edit: :)
+link to UML diagram https://dbdiagram.io/d/60f879754ed9be1c05d6e598
