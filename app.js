@@ -3,8 +3,10 @@ const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
+
+
 const {sequelize} = require('./db');
-const {Sauce} = require('./models'); //change to Inventory models
+const {Item, Warehouse} = require('./models/index'); //change to Inventory models
 const seed = require('./seed')
 
 const PORT = 3000; //maybe change port to 8080
