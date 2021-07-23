@@ -25,15 +25,19 @@ app.use(express.static('public'));
 
 seed();
 
-app.get('/sauces', async (req, res) => { //route to all inventory items, including programming langs books
-    const sauces= await Sauce.findAll()
-    res.render('sauces', {sauces}); //points to sauces handlebar
+app.get('/warehouses', async (req, res) => { //route to all inventory items, including programming langs books
+    const warehouse = await Warehouse.findAll()
+    //res.render('warehouse', {warehouses}); //points to warehouses handlebar
+    res.json({ warehouse }) // without handlebars 
+    res.send('created')
 })
 
-app.get('/sauces/:id', async (req, res) => { //route to individual inventory items
-    const sauce = await Sauce.findByPk(req.params.id)
-    res.render('sauce', {sauce}); 
+app.get('/warehouses/:id', async (req, res) => { //route to individual inventory items
+    const warehouse = await Warehouse.findByPk(req.params.id)
+    //res.render('sauce', {sauce}); 
+    res.json({ warehouse })
 })
+
 
 // !! add more routes here !!
 
