@@ -38,8 +38,24 @@ app.get('/warehouses/:id', async (req, res) => { //route to individual inventory
     res.json({ warehouse })
 })
 
+app.get('/items', async (req, res) => { //route to all inventory items, including programming langs books
+    const items = await Item.findAll()
+    //res.render('items', {items}); //points to items handlebar
+    res.json({ items }) // without handlebars 
+    res.send('created')
+})
+
+app.get('/items/:id', async (req, res) => { //route to individual inventory items
+    const item = await Item.findByPk(req.params.id)
+    //res.render('item', {item}); 
+    res.json({ item })
+})
+
+
+
 
 // !! add more routes here !!
+
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});
