@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs').promises;
 
 const {sequelize} = require('./db');
-const {Sauce} = require('./models'); //change Sauce to Inventory models
+const {Item, Warehouse} = require('./models/index'); //change to Inventory models
 
 
 const seed = async () => {
