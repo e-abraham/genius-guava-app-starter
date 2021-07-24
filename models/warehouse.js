@@ -7,6 +7,7 @@ class Warehouse extends Model {} //change to Inventory models
 Warehouse.init({                 //change to Inventory models
     name: DataTypes.STRING,
     location: DataTypes.STRING,
+    image: DataTypes.STRING,
 }, {
     sequelize,
     timestamps: false,
