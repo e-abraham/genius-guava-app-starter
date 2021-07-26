@@ -1,29 +1,29 @@
+
+<br />
 <h2>{{warehouse.name}}</h2>
 <section>
     <article>
-            <img id="myImg" src="{{warehouse.image}}" alt="snow" style="width:100%;max: width 100px;" />
+            <img id="myImg" src="{{warehouse.image}}" alt="snow" style="width:300px; height:400px;" />
+            <br />
+            <br />
+            <br />
             <br />
             <h3>ITEMS:</h3>
             {{!-- restaurant.Menus because from the sequelize query --}}
               {{#each warehouse.Items}}
-              <div>
-                <li> {{this.title}}</li>
-                <br>
-                <li>{{this.price}}</li>
-                <br>
-                <li> {{this.description}}</li>
-                <br>
-                <li>{{this.category}}</li>
-                <br>
-                <li>{{this.image}}</li>
-                <a class="myBtn" href="/items/{{id}}"><button class="button">Click to see {{title}}</button></a>
-            </div>
-            <div>
-            <br><br>
-            </div>
-                
-                    
-                       
+                <div class="card mb-3 border-0"  style="max-width: 540px;">
+                  <div class="row g-0">
+                    <div class="col-md-4">
+                      <img src="{{this.image}}" class="img-fluid rounded-start" alt="Warehouse items">
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <a class="myBtn" href="/items/{{id}}"><button class="button">Click to see more info</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
                     
               {{/each}}    
     </article>
