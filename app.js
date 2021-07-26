@@ -23,19 +23,26 @@ app.set('view engine', 'handlebars');
 // serve static assets from the public/ folder
 app.use(express.static('public'));
 
+app.use(express.json());
+app.use(express.urlencoded());
+//need this or else req.body will be an {}
+
 seed();
 
 app.get('/warehouses', async (req, res) => { //route to all inventory items, including programming langs books
-    const warehouse = await Warehouse.findAll()
-    //res.render('warehouse', {warehouses}); //points to warehouses handlebar
-    res.json({ warehouse }) // without handlebars 
-    res.send('created')
+    const warehouses = await Warehouse.findAll()
+    res.render('warehouses', {warehouses}); //points to warehouses handlebar
+    //res.json({ warehouse }) // without handlebars 
+    //res.send('created')
 })
 
 app.get('/warehouses/:id', async (req, res) => { //route to individual inventory items
-    const warehouse = await Warehouse.findByPk(req.params.id)
-    //res.render('sauce', {sauce}); 
-    res.json({ warehouse })
+    const warehouse = await Warehouse.findByPk(req.params.id,{include: {
+        model: Item,
+    },
+})
+    res.render('warehouse', {warehouse}); 
+    //res.json({ warehouse })
 })
 
 app.get('/items', async (req, res) => { //route to all inventory items, including programming langs books
@@ -47,8 +54,8 @@ app.get('/items', async (req, res) => { //route to all inventory items, includin
 
 app.get('/items/:id', async (req, res) => { //route to individual inventory items
     const item = await Item.findByPk(req.params.id)
-    //res.render('item', {item}); 
-    res.json({ item })
+    res.render('item', {item}); 
+    //res.json({ item })
 })
 
 
