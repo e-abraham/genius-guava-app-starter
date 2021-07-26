@@ -91,13 +91,35 @@ label, select {
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
+  transition: transform 0.5s; 
   border-radius: 10px; /* Rounded corners */
   font-size: 18px; /* Increase font size */
+}
+
+div.card.mb-3{
+  margin-right: 150px;
+  margin-left: 150px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+img#myImg{
+  max-width: 300px;
+  
+  margin-right: 450px;
+  margin-left: 450px;
+}
+
+button.btn-sm.btn-primary {
+  margin: 5px;
 }
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
 }
+
+
+
 #myImg {
   border-radius: 5px;
   cursor: pointer;
