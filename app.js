@@ -3,7 +3,7 @@ const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
-
+// the 
 
 const {sequelize} = require('./db');
 const {Item, Warehouse} = require('./models/index'); //change to Inventory models
