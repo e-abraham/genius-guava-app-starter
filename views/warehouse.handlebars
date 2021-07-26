@@ -1,0 +1,30 @@
+<h2>{{warehouse.name}}</h2>
+<section>
+    <article>
+            <img id="myImg" src="{{warehouse.image}}" alt="snow" style="width:100%;max: width 100px;" />
+            <br />
+            <h3>ITEMS:</h3>
+            {{!-- restaurant.Menus because from the sequelize query --}}
+              {{#each warehouse.Items}}
+              <div>
+                <li> {{this.title}}</li>
+                <br>
+                <li>{{this.price}}</li>
+                <br>
+                <li> {{this.description}}</li>
+                <br>
+                <li>{{this.category}}</li>
+                <br>
+                <li>{{this.image}}</li>
+                <a class="myBtn" href="/items/{{id}}"><button class="button">Click to see {{title}}</button></a>
+            </div>
+            <div>
+            <br><br>
+            </div>
+                
+                    
+                       
+                    
+              {{/each}}    
+    </article>
+</section> 
