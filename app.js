@@ -58,11 +58,42 @@ app.get('/items/:id', async (req, res) => { //route to individual inventory item
     //res.json({ item })
 })
 
+app.get("/new-item-form", (req, res) => { //route to new item form
+    res.render("newItemForm") //points to new item form handlebar
+})
 
+//request url must match form action url
+app.post('/new-item', async (req, res) => {
+    let newItem = await Item.create(req.body)
+    console.log("new Item", newItem); //view property values
+    
+    switch (newItem.category){
+        case "women's clothing":
+            warehouseId = 1;
+            break;
+        case "men's clothing":
+            warehouseId = 1;
+            break;
+        case "jewelry":
+            warehouseId = 2;
+            break;
+        case "electronics":
+            warehouseId = 3;
+            break;
+        default:
+            alert = "This warehouse does not exist";
+    }
 
+    let currWareHouse = await Warehouse.findByPk(warehouseId)
+    currWareHouse.addItem(newItem)
+
+    const foundItem = await Item.findByPk(newItem.id); //check item is created in database
+    console.log("found Item", foundItem);
+    
+    res.render('item', {item: newItem})
+})
 
 // !! add more routes here !!
-
 
 app.listen(PORT, () => {
     sequelize.sync({force: true});

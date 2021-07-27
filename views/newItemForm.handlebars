@@ -1,0 +1,28 @@
+<section class="input-form">
+    <h2>New Item Form</h2>
+    <form action="/new-item" method="post" autocomplete="on">
+        <label for="title">Item Title:</label>
+        <input type="text" id="title" name="title" placeholder="My New Item" required>
+        <br><br>
+        <label for="price">Price in USD $</label>
+        <input type="number" id="price" name="price" placeholder="Item Price" required>
+        <br><br>
+        <label for="description">Item Description:</label>
+        <input type="text" id="description" name="description" placeholder="Item Description" required>
+        <br><br>
+        <label for="category">Item Category:</label>
+        <select name="category" id="category" required>
+            <option value="" selected disabled> --- Choose a Category --- </option>
+            <option value="men's clothing">Men's Clothing</option>
+            <option value="women's clothing">Women's Clothing</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="electronics">Electronics</option>
+        </select>
+        <br><br>
+        <label for="image">Add Image URL:</label>
+        <input type="url" id="image" name="image" placeholder="URL" required>
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </form>
+</section>
