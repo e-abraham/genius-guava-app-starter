@@ -126,3 +126,51 @@ button.btn-sm.btn-primary {
   transition: 0.3s;
   box-shadow: 2px 2px 5px;
 }
+
+.bg-img {
+    /* The image used */
+    background-image: url("img_nature.jpg");
+  
+    min-height: 380px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+    /* Needed to position the navbar */
+    /* position: relative; */
+  }
+  
+  /* Position the navbar container inside the image */
+  .container {
+    position: center;
+    margin: 20px;
+    width: auto;
+  }
+  
+  /* The navbar */
+  .topnav {
+    overflow: hidden;
+    background-color: #333;
+    
+  }
+  
+  div.topnav{
+      align-content: center;
+      margin-left: 100px;
+  }
+  /* Navbar links */
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: rgb(230, 21, 21);
+  }
