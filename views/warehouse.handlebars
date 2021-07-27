@@ -1,7 +1,5 @@
-
-<br />
 <h2>{{warehouse.name}}</h2>
-<section>
+<section class="row">
     <article>
             <img id="myImg" src="{{warehouse.image}}" alt="snow" style="width:300px; height:400px;" />
             <br />
@@ -9,9 +7,9 @@
             <br />
             <br />
             <h3>ITEMS:</h3>
-            {{!-- restaurant.Menus because from the sequelize query --}}
+            <div class="row justify-content-around">
               {{#each warehouse.Items}}
-                <div class="card mb-3 border-0"  style="max-width: 540px;">
+                <div class="card mb-3 border-0 col-md-auto"  style="max-width: 540px;">
                   <div class="row g-0">
                     <div class="col-md-4">
                       <img src="{{this.image}}" class="img-fluid rounded-start" alt="Warehouse items">
@@ -25,6 +23,11 @@
                   </div>
                 </div>    
                     
-              {{/each}}    
+              {{/each}}
+            </div>
+            
+
     </article>
-</section> 
+    
+    
+</section>
