@@ -58,7 +58,24 @@ app.get('/items/:id', async (req, res) => { //route to individual inventory item
     //res.json({ item })
 })
 
+app.get("/new-item-form", (req, res) => { //route to new item form
+    res.render("newItemForm") //points to new item form handlebar
+})
 
+//request url must match form action url
+app.post("/new-item", async (req, res) => {
+    // console.log(req.body); //view form input w/o creating item
+    // res.json(req.body);
+    const newItem = await Item.create(req.body); //create new item
+    console.log("new Item", newItem); //view property values
+    const foundItem = await Item.findByPk(newItem.id); //check item is created in database
+    console.log("found Item", foundItem);
+    if(foundItem){
+        res.status(201).send("New Item successfully created!")
+    } else {
+        console.error("Item was not created!")
+    }
+})
 
 
 // !! add more routes here !!
