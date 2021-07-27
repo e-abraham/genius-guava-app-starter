@@ -1,18 +1,10 @@
-
-<br />
-<section class="warehouses">
-    {{!-- what is happening below? Where does {{image}}, {{id}}, {{name}} come from? --}}
+<section class="warehouses row">
     {{#each warehouses}} 
-        <article class="warehouse">
+        <article class="warehouse col-md-4">
             <h2>{{this.name}}</h2>
             <img id="myImg" src="{{this.image}}" alt="snow" style />
             <br />
             <a class="myBtn" href="/warehouses/{{id}}"><button class=" btn-sm btn-primary">{{name}}</button></a>		
         </article>
     {{/each}}
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-    <br />
-    <br />
-    <br />
-    <script src="script.js"></script>
 </section> 
