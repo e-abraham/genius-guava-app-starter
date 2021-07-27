@@ -61,9 +61,11 @@
 * User can Delete Item from Warehouse by clicking delete button
 	* Delete Route
 	* EITHER Form
+```
 	<form method="Delete">
 		<button>X</button>
 	</form>
+```
 	* OR Ajax on the DOM
 	```
 	let button = document.getElementById("deleteBtn")
