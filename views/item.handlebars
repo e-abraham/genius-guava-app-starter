@@ -1,31 +1,21 @@
-{{!-- <button
-        type="button"
-        class="btn btn-danger btn-floating btn-lg"
-        id="btn-back-to-top"
-        >
-            <i class="fas fa-arrow-up">Top</i>
-</button> --}}
+
 <br />
 <h2>{{item.title}}</h2>
 <section>
     <article class="item">
-            <img src={{item.image}} />
+            <img src="{{item.image}}" style="max-width: 300px; height= 300px"> 
             <br />
             <h3>ITEM:</h3>
-              
-              <div>
-                <li> {{item.title}}</li>
-                <br>
-                <li>{{item.price}}</li>
-                <br>
-                <li> {{item.description}}</li>
-                <br>
-                <li>{{item.category}}</li>
-                <br>
-                
-            </div>
-            <div>
-            <br><br>
+                  <div class="row justify-content-around"> 
+                   <div class="card mb-3 border-0 col-md-7">
+                      <h5 class="card-title">{{item.title}}</h5>
+                      <h5 class="card-title">Category: {{item.category}}</h5>
+                      <br> 
+                      <h5 class="card-title">Price: ${{item.price}}</h5>
+                      <br>
+                      <h5 class="card-title">Description:  {{item.description}}</h5>
+                    <div >
+                  </div>
             </div>
     </article>
 </section>

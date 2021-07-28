@@ -45,6 +45,9 @@ app.get('/warehouses/:id', async (req, res) => { //route to individual inventory
     //res.json({ warehouse })
 })
 
+app.get('/homepage',  (req, res) => {
+    res.render("home");//points to new item form handlebar
+})
 // app.get('/items', async (req, res) => { //route to all inventory items, including programming langs books
 //     const items = await Item.findAll()
 //     // res.render('items', {items}); //points to items handlebar
