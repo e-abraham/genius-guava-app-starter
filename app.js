@@ -77,7 +77,7 @@ app.post('/new-item', async (req, res) => {
         case "men's clothing":
             warehouseId = 1;
             break;
-        case "jewelry":
+        case "jewelery":
             warehouseId = 2;
             break;
         case "electronics":
