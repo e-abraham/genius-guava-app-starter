@@ -1,15 +1,19 @@
 
-<br />
+
+<a class="myBtn" href="/warehouses/{{item.WarehouseId}}"><button type="button"class="btn btn-outline-dark">Previous Page</button></a>
+<a class="myBtn" href="/items/{{id}}"><button type="button"class="btn btn-outline-dark">Delete Item</button></a>
+<br>
+<br>
 <h2>{{item.title}}</h2>
 <section>
     <article class="item">
             <img src="{{item.image}}" style="max-width: 300px; height= 300px"> 
             <br />
-            <h3>ITEM:</h3>
-                  <div class="row justify-content-around"> 
-                   <div class="card mb-3 border-0 col-md-7">
-                      <h5 class="card-title">{{item.title}}</h5>
-                      <h5 class="card-title">Category: {{item.category}}</h5>
+            <br>
+                  <div class="row justify-content-around "> 
+                   <div class="card mb-3 border-0 col-md-7 d-flex align-items-center shadow p-3 mb-5 bg-white rounded">
+                     <br>
+                     <h5 class="card-title">Category: {{item.category}}</h5>
                       <br> 
                       <h5 class="card-title">Price: ${{item.price}}</h5>
                       <br>
