@@ -20,3 +20,12 @@ function backToTop() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+const deleteBtn = document.getElementById('delete-btn')
+
+deleteBtn.addEventListener('click', async (e) => {
+  let id = deleteBtn.dataset.item;
+  let warehouse = deleteBtn.dataset.warehouse
+  await fetch(`/items/${id}`, {method : 'DELETE'});
+  window.location.href = '/warehouses/' + warehouse
+})
+
