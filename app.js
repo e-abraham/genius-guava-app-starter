@@ -87,6 +87,7 @@ app.post('/new-item', async (req, res) => {
 })
 
 app.delete("/items/:id", async (req, res) => { //route to delete an item
+
     await Item.destroy({
         where : {id : req.params.id}
     })

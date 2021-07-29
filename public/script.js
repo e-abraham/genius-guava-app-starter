@@ -28,3 +28,4 @@ deleteBtn.addEventListener('click', async (e) => {
   await fetch(`/items/${id}`, {method : 'DELETE'});
   window.location.href = '/warehouses/' + warehouse
 })
+
