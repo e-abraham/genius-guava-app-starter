@@ -87,12 +87,11 @@ app.post('/new-item', async (req, res) => {
 })
 
 app.delete("/items/:id", async (req, res) => { //route to delete an item
-    const item = await Item.findByPk(req.params.id);
-    const warehouse = item.WarehouseId;
+    console.log("Did we hit delte route?", req.params.id)
     await Item.destroy({
         where : {id : req.params.id}
     })
-    res.render("warehouse", {warehouse})
+    res.send("deleted")
 })
 
 // !! add more routes here !!

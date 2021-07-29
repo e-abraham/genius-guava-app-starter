@@ -1,6 +1,6 @@
 <br>
 <a class="myBtn" id="backbtn" href= "/warehouses/{{item.WarehouseId}}"><button type="button"class="btn btn-outline-dark">Previous Page</button></a>
-<a class="myBtn" href="/items/{{id}}"><button type="button"class="btn btn-outline-dark">Delete Item</button></a>
+<button type="button" class="btn btn-outline-dark" id="delete-btn" data-item="{{item.id}}" data-warehouse="{{item.WarehouseId}}">Delete Item</button>
 <br>
 <br>
 <h2>{{item.title}}</h2>
@@ -22,4 +22,3 @@
             </div>
     </article>
 </section>
-<script src="script.js"></script> 
