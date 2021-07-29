@@ -70,18 +70,18 @@ app.get("/new-item-form", (req, res) => { //route to new item form
 app.post('/new-item', async (req, res) => {
     let newItem = await Item.create(req.body)
     console.log("new Item", newItem); //view property values
-    
+
     switch (newItem.category){
-        case "women's clothing":
+        case "Women's Clothing":
             warehouseId = 1;
             break;
-        case "men's clothing":
+        case "Men's Clothing":
             warehouseId = 1;
             break;
-        case "jewelery":
+        case "Jewelery":
             warehouseId = 2;
             break;
-        case "electronics":
+        case "Electronics":
             warehouseId = 3;
             break;
         default:
