@@ -98,7 +98,7 @@ img#myImg{
   box-shadow: 2px 2px 5px;
 }
 
-.navbar.navbar-light {
+.navbar.navbar-dark {
   width: 103vw;
 }
 #back-to-top{
@@ -118,4 +118,12 @@ input[type=text],[type=number],[type=url]{
 
 #category{
   padding: .375rem .75rem;
+}
+
+.navbar-toggler {
+  border: 1px solid white;
+}
+
+.navbar-dark .navbar-toggler {
+  border-color: white;
 }
