@@ -111,3 +111,11 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+input[type=text],[type=number],[type=url]{
+  padding: .375rem .75rem;
+}
+
+#category{
+  padding: .375rem .75rem;
+}

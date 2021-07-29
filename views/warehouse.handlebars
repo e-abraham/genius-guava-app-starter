@@ -1,20 +1,20 @@
+<br>
 <h2>{{warehouse.name}}</h2>
 <section class="row">
     <article>
-            <img id="myImg" src="{{warehouse.image}}" alt="snow" style="width:300px; height:400px;" />
-            <br />
+            <img id="myImg" src="{{warehouse.image}}" alt="Warehouse" style="width:300px; height:400px;" />
             <br />
             <br />
             <br />
             <h3>ITEMS:</h3>
-            <div class="row justify-content-around">
+            <div class="row justify-content-evenly">
               {{#each warehouse.Items}}
-                <div class="card mb-3 border-0 col-md-auto d-flex justify-content-center"  style="max-width: 540px;">
+                <div class="card my-3 border-0 col-md-auto d-flex justify-content-center"  style="max-width: 540px;">
                   <div class="row g-0 d-flex align-items-center">
-                    <div class="col-md-4">
-                      <img src="{{this.image}}" class="img-fluid rounded-start" alt="Warehouse items">
+                    <div class="col-md-4 pe-3">
+                      <img src="{{this.image}}" class="img-fluid rounded-start" alt="Warehouse item">
                     </div>
-                    <div class="col-md-8 d-flex align-items-center shadow p-3 mb-5 bg-white rounded">
+                    <div class="col-md-8 d-flex align-items-center shadow p-3 bg-white rounded">
                       <div class="card-body">
                         <h5 class="card-title">{{this.title}}</h5>
                         <a class="myBtn" href="/items/{{id}}"><button type="button"class="btn btn-outline-dark">Click to see more info</button></a>

@@ -3,13 +3,11 @@ const Handlebars = require('handlebars');
 const expressHandlebars = require('express-handlebars');
 const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access');
 
-// the 
-
 const {sequelize} = require('./db');
-const {Item, Warehouse} = require('./models/index'); //change to Inventory models
+const {Item, Warehouse} = require('./models/index');
 const seed = require('./seed')
 
-const PORT = process.env.PORT || 3000; //maybe change port to 8080
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -29,11 +27,9 @@ app.use(express.urlencoded());
 
 seed();
 
-app.get('/warehouses', async (req, res) => { //route to all inventory items, including programming langs books
+app.get('/warehouses', async (req, res) => { //route to all inventory items
     const warehouses = await Warehouse.findAll()
     res.render('warehouses', {warehouses}); //points to warehouses handlebar
-    //res.json({ warehouse }) // without handlebars 
-    //res.send('created')
 })
 
 app.get('/warehouses/:id', async (req, res) => { //route to individual inventory items
@@ -41,24 +37,16 @@ app.get('/warehouses/:id', async (req, res) => { //route to individual inventory
         model: Item,
     },
 })
-    res.render('warehouse', {warehouse}); 
-    //res.json({ warehouse })
+    res.render('warehouse', {warehouse});
 })
 
 app.get('/homepage',  (req, res) => {
     res.render("home");//points to new item form handlebar
 })
-// app.get('/items', async (req, res) => { //route to all inventory items, including programming langs books
-//     const items = await Item.findAll()
-//     // res.render('items', {items}); //points to items handlebar
-//     // res.json({ items }) // without handlebars 
-//     // res.send('created')
-// })
 
 app.get('/items/:id', async (req, res) => { //route to individual inventory items
     const item = await Item.findByPk(req.params.id)
-    res.render('item', {item}); 
-    //res.json({ item })
+    res.render('item', {item});
 })
 
 app.get("/new-item-form", (req, res) => { //route to new item form
@@ -70,18 +58,18 @@ app.get("/new-item-form", (req, res) => { //route to new item form
 app.post('/new-item', async (req, res) => {
     let newItem = await Item.create(req.body)
     console.log("new Item", newItem); //view property values
-    
+
     switch (newItem.category){
-        case "women's clothing":
+        case "Women's Clothing":
             warehouseId = 1;
             break;
-        case "men's clothing":
+        case "Men's Clothing":
             warehouseId = 1;
             break;
-        case "jewelery":
+        case "Jewelery":
             warehouseId = 2;
             break;
-        case "electronics":
+        case "Electronics":
             warehouseId = 3;
             break;
         default:
@@ -98,9 +86,14 @@ app.post('/new-item', async (req, res) => {
     
 })
 
-
-
-
+app.delete("/items/:id", async (req, res) => { //route to delete an item
+    const item = await Item.findByPk(req.params.id);
+    const warehouse = item.WarehouseId;
+    await Item.destroy({
+        where : {id : req.params.id}
+    })
+    res.render("warehouse", {warehouse})
+})
 
 // !! add more routes here !!
 
