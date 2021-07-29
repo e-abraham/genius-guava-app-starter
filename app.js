@@ -65,6 +65,7 @@ app.get("/new-item-form", (req, res) => { //route to new item form
     res.render("newItemForm") //points to new item form handlebar
 })
 
+
 //request url must match form action url
 app.post('/new-item', async (req, res) => {
     let newItem = await Item.create(req.body)
@@ -93,8 +94,13 @@ app.post('/new-item', async (req, res) => {
     const foundItem = await Item.findByPk(newItem.id); //check item is created in database
     console.log("found Item", foundItem);
     
-    res.render('item', {item: newItem})
+    res.render('item', {item: foundItem});    
+    
 })
+
+
+
+
 
 // !! add more routes here !!
 
