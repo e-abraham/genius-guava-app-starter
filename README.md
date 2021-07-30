@@ -1,3 +1,5 @@
+<div style="width:100%;height:0;padding-bottom:53%;position:relative;"><iframe src="https://giphy.com/embed/q5dP57zQVkVE3MMllL" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/q5dP57zQVkVE3MMllL">via GIPHY</a></p>
+
 # Inventory Application
 SWE Group Project by Team Genius Guavas
 Inventory system application uses Node.js, Sequelize, Express, and Handlebars to store warehouse inventory data, view and manage items from the front end. Users can add items to a warehouse with the Create New Item tab. Hosted on the Heroku cloud platform.
